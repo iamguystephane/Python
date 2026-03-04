@@ -10,14 +10,14 @@ def ask_guess():
 def check_guess(target):
     guess_count = 0
     guess = ask_guess()
-    while (guess_count < TOTAL_GUESSES):
+    while (guess_count < TOTAL_GUESSES - 1):
         guess_count += 1
         if guess == target:
             return guess_count
         if guess < target:
-            print("Too Low!")
+            print(f"Too Low! {guess_count} / {TOTAL_GUESSES} guesses used.")
         if guess > target:
-            print("Too high!")
+            print(f"Too high! {guess_count} / {TOTAL_GUESSES} guesses used.")
         guess = ask_guess()
     return 0
 
